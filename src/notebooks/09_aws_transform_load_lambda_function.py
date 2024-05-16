@@ -121,7 +121,7 @@ def read_csv_from_s3(bucket: str, path: str, filename: str) -> pd.DataFrame:
     
     return output_df
 
-def upload_dataframe_to_s3(dataframe: pd.DataFrame, bucket: str, path: str):
+def _upload_dataframe_to_s3(dataframe: pd.DataFrame, bucket: str, path: str):
     """Uploads dataframe to the specified S3 path.
     
     Args:
@@ -162,7 +162,7 @@ def upload_map_table_data_to_s3(bucket: str, path: str, file_type: str, datafram
     
     s3.copy_object(Bucket=bucket, CopySource={'Bucket': bucket, 'Key': map_table_file_path}, Key=previous_map_table_file_path)
     
-    upload_dataframe_to_s3(dataframe=dataframe, bucket=bucket, path=map_table_file_path)
+    _upload_dataframe_to_s3(dataframe=dataframe, bucket=bucket, path=map_table_file_path)
     
 def upload_and_move_file_on_S3 (dataframe: pd.DataFrame, datetime_col: str, bucket: str, 
         target_path_transformed: str, file_type: str, filename: str, source_path: str, target_path_raw: str):
@@ -189,7 +189,7 @@ def upload_and_move_file_on_S3 (dataframe: pd.DataFrame, datetime_col: str, buck
     formatted_date = dataframe[datetime_col].iloc[0].strftime('%Y-%m-%d')
     new_path_with_filename = f'{target_path_transformed}{file_type}_{formatted_date}.csv'
     
-    upload_dataframe_to_s3(dataframe=dataframe, bucket=bucket, path=new_path_with_filename)
+    _upload_dataframe_to_s3(dataframe=dataframe, bucket=bucket, path=new_path_with_filename)
     
     s3.copy_object(Bucket=bucket, CopySource={'Bucket': bucket, 'Key': f'{source_path}{filename}'}, Key=f'{target_path_raw}{filename}')
     
