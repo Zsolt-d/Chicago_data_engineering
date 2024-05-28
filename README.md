@@ -25,6 +25,29 @@ This project involves fetching taxi trip data and weather data from two separate
 8. __aws_extract_lambda_function:__ This notebook contains functions for gathering taxi and weather data throug AWS lambda function, upload it to S3 bucket and lambda handler function.
 9. __aws_transform_load_lambda_function:__ This notebook contains functions for taxi trips and weather data transformation, update map table, update taxi trips data with new map tables, read csv form S3, upload dataframe to S3, upload map table to S3, upload and move file on S3 and lambda handler function.
 10. __local_visualisations:__ This notebook contains sime visualisation from data.
+
     Detecting outliers by box plot:
     ![image](https://github.com/Zsolt-d/Chicago_data_engineering/assets/151520036/c977568e-606d-41b0-8b30-8b3c9b666207)
+
+    This bar plot represents how many trips each company made:
+    ![image](https://github.com/Zsolt-d/Chicago_data_engineering/assets/151520036/0224c7ba-4800-445f-8478-3e3abf7f0aa4)
+
+    This chart shows how many trips were on which day:
+    ![image](https://github.com/Zsolt-d/Chicago_data_engineering/assets/151520036/6552e677-b78c-4ad9-810e-d8acc8675fef)
+
+    This figure shows how many times the passengers paid with which payment type:
+    ![image](https://github.com/Zsolt-d/Chicago_data_engineering/assets/151520036/4516b757-2ab4-45c7-8b17-fe4a0c28aad3)
+
+    This bar plot represents the average trip total fare dependong on payment type:
+    ![image](https://github.com/Zsolt-d/Chicago_data_engineering/assets/151520036/b1504b89-40f4-48ac-bd11-cefc016df85b)
+
+## Conclusion
+The project successfully integrated Chicago taxi trip data with weather data through a robust data engineering process. This involved collecting data from multiple APIs, cleaning and preprocessing the data, and merging it into a unified dataset. The comprehensive data engineering pipeline ensured that the data was accurate, consistent, and ready for analysis.
+
+
+
+    
+
+
+    
 
