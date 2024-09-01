@@ -3,6 +3,8 @@ This project aims to analyze Chicago taxi trips data alongside weather data to u
 
 ## Introduction
 This project involves fetching taxi trip data and weather data from two separate web APIs, processing the data using pandas, and creating visualizations to identify patterns and insights. The primary goal is to understand how various factors, including weather, affect taxi trips in Chicago. The data collection and storage are managed using AWS Lambda functions and stored in an S3 bucket.
+![image](https://github.com/user-attachments/assets/eab9d5ad-fa58-4e33-845f-083a0bdd6a7e)
+
 
 ## Data sources
 1. __Chicago Taxi Trips Data:__ The data was gathered from Chicago Data Portal (https://data.cityofchicago.org/). Contains information on trip miles, total fare, company, payment type, pickup and dropoff locations etc.
